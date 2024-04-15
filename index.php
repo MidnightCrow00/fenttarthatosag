@@ -35,30 +35,43 @@ echo "</div>";
 echo "<h3> </h3>";
 echo "<h4 class ='cim'>2.feladat: Fogyasztás, környezet és fenntarthatóság kapcsolata </h4>";
 
-$fogyasztas = array(
-    "több, mint amit a természet újratermelni képes",
-    "a természet újratermelő kapacitásával azonos mértékű",
-    "kevesebb, mint amit a természet újratermelni képes"
-);
+$EOelso = "A megújuló erőforrások fogyasztása";
+$EOmasodik = "A környezet helyzete";
+$EOharmadik = "Fenntarthatóság";
+$elsoOszlop = array($EOelso, $EOmasodik, $EOharmadik);
 
-$kornyezet = array(
-    "a környezet pusztul",
-    "környezeti egyensúly",
-    "a környezet megújul"
-);
+$MOelso = "a természet újratermelő kapacitásával azonos mértékű";
+$MOmasodik = "környezeti egyensúly";
+$MOharmadik = "fenntartható, nem változó állapot";
+$masodikOszlop = array($MOelso,$MOmasodik,$MOharmadik);
 
-$fenntarthato = array(
-    "nem fenntartható",
-    "fenntartható, nem változó állapot",
-    "fenntartható fejlődés"
-);
+$HOelso = "kevesebb, mint amit a természet újratermelni képes";
+$HOmasodik = "a környezet megújul";
+$HOharmadik = "fenntartható fejlődés";
+$harmadikOszlop = array($HOelso, $HOmasodik, $HOharmadik);
+
+echo "<h3> </h3>";
+echo "<h4 class ='cim'>3.feladat: Megújuló energiaforrás </h4>";
+// 3. feladat
+echo "<p>Megújuló energiaforrásnak nevezzük az energiahordozók azon csoportját, amelyek emberi időléptékben képesek megújulni, azaz nem fogynak el, ellentétben a nem megújuló energiaforrásokkal. A megújuló energiaforrások a napenergia közvetlen termikus és fotoelektromos hasznosítása, a biomassza, szélenergia, vízenergia, a tenger hullámzásából kinyerhető energia, a geotermikus energia, valamint a Holddal összefüggésben az árapály energia. A geotermikus energia a Nappal való kapcsolat, a földfelszín Napból és a magmából származó energiaáram jelentős különbsége alapján sorolható a megújuló energiaforrások közé.</p>";
 
 echo "<table>";
-echo "<tr><th>A megújuló erőforrások fogyasztása</th><th>A környezet helyzete</th><th>Fenntarthatóság</th></tr>";
-for ($i = 0; $i < count($fogyasztas); $i++) {
-    echo "<tr><td>" . $fogyasztas[$i] . "</td><td>" . $kornyezet[$i] . "</td><td>" . $fenntarthato[$i] . "</td></tr>";
+echo "<tr>";
+echo "<th>Ország</th>";
+echo "<th>EU cél 2020</th>";
+echo "</tr>";
+$megujAr = array("EU átlag"=>"20", "Belgium"=>"13", "Bulgária"=>"16", "Dánia"=>"20", "EU átlag"=>"30", "Németország"=>"18", "Észtország"=>"25", "Finnország"=>"36");
+foreach ($megujAr as $kulcs => $ertek){
+    echo
+    "
+    <tr>
+    <td>$kulcs</td>
+    <td>$ertek</td>
+    </tr>
+    ";
 }
 echo "</table>";
+
 
 ?>
 
